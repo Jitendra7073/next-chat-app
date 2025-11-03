@@ -1,13 +1,23 @@
 const express = require("express");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
+const cors = require("cors");
 const app = express();
 const port = 5000;
 
+const BASE_URL = "https://chat-app-delta-three-25.vercel.app";
+
+app.use(
+  cors({
+    origin: BASE_URL,
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 const appServer = createServer(app);
 const io = new Server(appServer, {
   cors: {
-    origin: "https://chat-app-delta-three-25.vercel.app/",
+    origin: BASE_URL,
     methods: ["GET", "POST"],
     credentials: true,
   },
