@@ -195,7 +195,7 @@ export default function ChatInterface() {
   useEffect(() => {
     if (!usernameEntered) return;
 
-    const newSocket = io("http://localhost:5000");
+    const newSocket = io("https://next-chat-app-server-89xe.onrender.com");
     setSocket(newSocket);
 
     // Register current user

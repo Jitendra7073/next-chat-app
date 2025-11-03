@@ -10,7 +10,7 @@ export default function Home() {
   const socket = io("http://localhost:5000");
 
   useEffect(() => {
-    socket.on("receive_message_by_id", (msg) => {
+    socket.on("receive_message", (msg) => {
       console.log(msg);
     });
   }, []);

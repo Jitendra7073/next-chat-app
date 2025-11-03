@@ -7,7 +7,7 @@ const port = 5000;
 const appServer = createServer(app);
 const io = new Server(appServer, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chat-app-delta-three-25.vercel.app/",
     methods: ["GET", "POST"],
     credentials: true,
   },
